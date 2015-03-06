@@ -1,4 +1,4 @@
-
+<?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -44,12 +44,103 @@
                         <configuration>
                             <artifactItems>
                                 
+                                <!-- OsgiFX actual modules -->
                                 <artifactItem>
                                     <groupId>org.osgifx</groupId>
                                     <artifactId>view</artifactId>
                                     <version>1.0.0</version>
                                 </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.osgifx</groupId>
+                                    <artifactId>core</artifactId>
+                                    <version>1.0.0</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.osgifx</groupId>
+                                    <artifactId>core-impl</artifactId>
+                                    <version>1.0.0</version>
+                                </artifactItem>
+                                
+                                <!-- JPA - EclipseLink OSGi ready -->
+                                <artifactItem>
+                                    <groupId>org.eclipse.persistence</groupId>
+                                    <artifactId>javax.persistence</artifactId>
+                                    <version>2.0.3</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.eclipse.persistence</groupId>
+                                    <artifactId>org.eclipse.persistence.jpa</artifactId>
+                                    <version>2.3.2</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.eclipse.persistence</groupId>
+                                    <artifactId>org.eclipse.persistence.osgi</artifactId>
+                                    <version>2.3.2</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.eclipse.persistence</groupId>
+                                    <artifactId>org.eclipse.persistence.core</artifactId>
+                                    <version>2.3.2</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.eclipse.persistence</groupId>
+                                    <artifactId>org.eclipse.persistence.asm</artifactId>
+                                    <version>2.3.2</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.eclipse.persistence</groupId>
+                                    <artifactId>org.eclipse.persistence.antlr</artifactId>
+                                    <version>2.3.2</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.apache.derby</groupId>
+                                    <artifactId>derby</artifactId>
+                                    <version>10.8.2.2</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.osgi</groupId>
+                                    <artifactId>org.osgi.enterprise</artifactId>
+                                    <version>4.2.0</version>
+                                </artifactItem>
 
+                                <!-- apache felix iPOJO -->
+                                <artifactItem>
+                                    <groupId>org.apache.felix</groupId>
+                                    <artifactId>org.apache.felix.ipojo</artifactId>
+                                    <version>1.12.1</version>
+                                </artifactItem>
+                                <dependency>
+                                    <groupId>org.apache.felix</groupId>
+                                    <artifactId>org.apache.felix.ipojo.annotations</artifactId>
+                                    <version>1.12.1</version>
+                                </dependency>
+
+                                <!-- Option to enable felix web console at http://localhost:8080/system/console/bundles 
+                                user: admin
+                                pass: admin -->
+                                <artifactItem>
+                                    <groupId>org.apache.felix</groupId>
+                                    <artifactId>org.apache.felix.http.bundle</artifactId>
+                                    <version>2.2.0</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.apache.felix</groupId>
+                                    <artifactId>org.apache.felix.webconsole</artifactId>
+                                    <version>3.1.8</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.osgi</groupId>
+                                    <artifactId>org.osgi.compendium</artifactId>
+                                    <version>4.2.0</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.apache.felix</groupId>
+                                    <artifactId>org.apache.felix.scr</artifactId>
+                                    <version>1.8.0</version>
+                                </artifactItem>
+                                <!-- end optional -->
+                                
+                                <!-- Basic Felix bundles-->
                                 <artifactItem>
                                     <groupId>org.apache.felix</groupId>
                                     <artifactId>org.apache.felix.bundlerepository</artifactId>
@@ -70,6 +161,7 @@
                                     <artifactId>org.apache.felix.gogo.shell</artifactId>
                                     <version>0.10.0</version>
                                 </artifactItem>
+                                
                             </artifactItems>
                             <outputDirectory>bundle</outputDirectory>
                         </configuration>
@@ -99,6 +191,14 @@
             </plugin>
         </plugins>
     </build>
+    
+    <repositories>
+        <repository>
+            <id>jboss-public</id>
+            <name>Jboss public</name>
+            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>

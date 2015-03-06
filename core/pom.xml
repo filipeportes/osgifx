@@ -11,23 +11,19 @@
     </parent>
 
     <groupId>org.osgifx</groupId>
-    <artifactId>view</artifactId>
+    <artifactId>core</artifactId>
     <version>1.0.0</version>
     <packaging>bundle</packaging>
 
-    <name>OsgiFX Main View bundle</name>
+    <name>OsgiFX Core bundle</name>
 
     <dependencies>
-        <dependency>
-            <groupId>org.osgifx</groupId>
-            <artifactId>core</artifactId>
-            <version>1.0.0</version>
-        </dependency>
 
         <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.core</artifactId>
-            <version>4.3.0</version>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>javax.persistence</artifactId>
+            <version>2.0.3</version>
         </dependency>
     </dependencies>
+
 </project>

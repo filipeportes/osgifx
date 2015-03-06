@@ -11,11 +11,11 @@
     </parent>
 
     <groupId>org.osgifx</groupId>
-    <artifactId>view</artifactId>
+    <artifactId>core-impl</artifactId>
     <version>1.0.0</version>
     <packaging>bundle</packaging>
 
-    <name>OsgiFX Main View bundle</name>
+    <name>OsgiFX Core-Impl Bundle</name>
 
     <dependencies>
         <dependency>
@@ -23,11 +23,15 @@
             <artifactId>core</artifactId>
             <version>1.0.0</version>
         </dependency>
-
         <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.core</artifactId>
-            <version>4.3.0</version>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>org.eclipse.persistence.jpa</artifactId>
+            <version>2.3.2</version>
+        </dependency>                  
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.ipojo.annotations</artifactId>
+            <version>1.12.1</version>
         </dependency>
     </dependencies>
 </project>

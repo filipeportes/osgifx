@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.osgifx.view.controller.PersonController">
+    <children>
+        <TableView fx:id="table" AnchorPane.topAnchor="20.0" AnchorPane.bottomAnchor="140.0">
+            <columns>
+                <TableColumn fx:id="firstnameColumn" prefWidth="200" text="Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="200" text="E-mail">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="email" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn prefWidth="100" text="Password">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="password" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <GridPane fx:id="gridPane1" hgap="5.0" vgap="5.0" AnchorPane.bottomAnchor="50.0">
+            <children>
+                <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="name" prefHeight="22.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="E-mail:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="email" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Password" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="3" />                
+            </children>
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="NEVER" minWidth="10.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="NEVER" minWidth="10.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+        <Button defaultButton="true" layoutX="119.0" onAction="#save" text="Save" AnchorPane.bottomAnchor="10.0" />
+        <Button layoutX="181.0" onAction="#clean" text="Clean" AnchorPane.bottomAnchor="10.0" />
+    </children>
+</AnchorPane>

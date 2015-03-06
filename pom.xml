@@ -4,23 +4,80 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.osgifx</groupId>
-    <artifactId>org.osgifx.osgifx</artifactId>
+    <artifactId>pom</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
-    <name>OSGI - JavaFX Project</name>
+    <name>OsgiFX Base Project</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <modules>
-        <module>felix.runner</module>
+        <module>core</module>
+        <module>core-impl</module>
         <module>view</module>
+        <module>felix.runner</module>
     </modules>
+    
+    <repositories>
+        <repository>
+            <id>jboss-public</id>
+            <name>Jboss public</name>
+            <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
 
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.5.3</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <supportedProjectTypes>
+                        <supportedProjectType>bundle</supportedProjectType>
+                        <supportedProjectType>jar</supportedProjectType>
+                    </supportedProjectTypes>
+                    <instructions>
+                        <_include>-osgi.properties</_include>
+                        <_exportcontents>!*.impl.*</_exportcontents>
+                    </instructions>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>bundle-manifest</id>
+                        <phase>process-classes</phase>        
+                        <goals>
+                            <goal>manifest</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>bundle-install</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>install</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-ipojo-plugin</artifactId>
+                <version>1.12.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>ipojo-bundle</goal>
+                        </goals>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.2</version>
                 <configuration>
@@ -29,7 +86,7 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
-	</plugins>
+        </plugins>
     </build>
 
 </project>
