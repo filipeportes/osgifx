@@ -17,7 +17,7 @@
         <module>core</module>
         <module>core-impl</module>
         <module>view</module>
-        <module>felix.runner</module>
+        <module>felix.launcher</module>
     </modules>
     
     <repositories>
