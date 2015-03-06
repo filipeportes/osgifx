@@ -1,5 +1,5 @@
 # osgifx
-Example of application running JavaFX 2 in an OSGi felix container.
+Example of application running JavaFX 2 in an OSGi felix container with JPA persistence and iPOJO injections.
 
 view - main JavaFX view module, contains one view to manage Persosn.
 
