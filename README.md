@@ -7,4 +7,4 @@ core - define the model, persistence.xml and service interfaces that are used by
 
 core-impl - implements the service interfaces using the entityManagerFactory provided by OSGi.
 
-felix.launcher - puts all dependency bundles in one apache felix instance and run it.
+felix.launcher - puts all dependency bundles in one apache felix instance and run it with the proper conf.properties file.
